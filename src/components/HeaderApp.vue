@@ -46,21 +46,34 @@ export default {
       </div>
       <!-- tools -->
       <div id="tools" class="align-self-start justify-self-end d-flex">
-        <div id="download" class="px-3 py-1">
-          <i class="fa-solid fa-download me-2"></i>
-          <a href="#">Installa Steam</a>
+        <!-- download -->
+        <div id="download" class="d-flex align-content-center">
+          <a href="#" class="px-3 py-1">
+            <i class="fa-solid fa-download me-2"></i>
+            Installa Steam
+          </a>
         </div>
+        <!-- /download -->
         <div id="login-lang" class="d-flex">
+          <!-- login -->
           <div id="login" class="my-1">
             <a href="#" class="px-3">Accedi</a>
           </div>
-          <div id="lang" class="px-3 my-1">
-            <select name="lang" id="lang">
-              <option value="">Lingua</option>
-              <option value="ita">Italiano</option>
-              <option value="eng">English</option>
-            </select>
+          <!-- /login -->
+          <!-- lang select -->
+          <div id="lang">
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Lingua
+              </button>
+              <ul class="dropdown-menu">
+                <li>Italiano</li>
+                <li>English</li>
+              </ul>
+            </div>
           </div>
+          <!-- /lang select -->
         </div>
       </div>
       <!-- /tools -->
@@ -123,27 +136,36 @@ header {
     }
 
     #tools {
-      
-      i,
       a {
         color: #fbfaff;
       }
-        #download {
-          background-color: #587d13;
-        }
 
-        #login {
-          a {
-            border-right: 1px solid #fbfaff;
-          }
-        }
+      #download {
+        background-color: #587d13;
+      }
 
-        #lang {
-          background-color: inherit;
-          border: none;
-          color: #fbfaff;
+      #login {
+        a {
+          border-right: 1px solid #fbfaff;
         }
       }
+
+      #lang {
+        background-color: inherit;
+        border: none;
+        color: #fbfaff;
+
+        button {
+          background-color: inherit;
+          border: none;
+          font-size: inherit;
+        }
+
+        li:hover {
+          cursor: pointer;
+        } 
+      }
+    }
   }
 }
 </style>
