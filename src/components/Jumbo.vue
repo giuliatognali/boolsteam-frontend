@@ -15,15 +15,18 @@ export default {
   <div class="ms-big-container">
     <div class="ms-container">
       <!-- menu nav -->
-      <nav class="d-flex justify-content-between">
-        <ul class="list-unstyled m-0 gap-4 d-flex align-items-center">
-          <li><a href="#"> Il tuo negozio</a></li>
-          <li><a href="#"> Novità e tendenze</a></li>
-          <li><a href="#"> Categorie</a></li>
-          <li><a href="#"> Negozio e punti</a></li>
-          <li><a href="#"> Notizie</a></li>
-          <li><a href="#"> Laboratori</a></li>
+      <div class="nav-container">
+        <nav class="d-flex justify-content-between">
+        <ul class="list-unstyled m-0 d-flex align-items-center">
+          <li><a href="#"><h6>Il tuo negozio</h6> </a></li>
+          <li><a href="#"><h6>Novità e tendenze</h6> </a></li>
+          <li><a href="#"><h6>Categorie</h6> </a></li>
+          <li><a href="#"><h6> Negozio e punti</h6></a></li>
+          <li><a href="#"><h6>Notizie</h6> </a></li>
+          <li><a href="#"><h6>Laboratori</h6> </a></li>
         </ul>
+      
+
         <!-- /menu nav -->
         <!-- search bar -->
         <div class="search-bar">
@@ -32,6 +35,7 @@ export default {
           <button class="submit btn-secondary px-2 py-1"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </nav>
+    </div>
       <!-- /search bar -->
       <div class="ms-container py-5">
         <h1>
@@ -70,24 +74,43 @@ export default {
       /*   background-color: hsla(210, 39%, 38%, 0.86); */
       background-color: hsla(223, 45%, 52%, 0.831);
       width: 100%;
-      padding: 7px 2px 7px 10px;
+      margin-top: 0;
 
       a {
         text-decoration: none;
         color: white;
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        h6{
+          margin: 0;
+        }
       }
+      a:hover {
+              background-color: #8297cc;
+            }
     }
   }
 
   .search-bar {
+    padding: 4px 0;
     input{
       border-style: none;
       padding-left: 10px;
+      background-color: #336377;
+      
+      border: 1px darkcyan solid;
     }
     button {
       border-style: none;
       margin-right: 2px;
+      background-color: #336377;
+      border: 1px darkcyan solid;
     }
 
 }
+
+
 }</style>

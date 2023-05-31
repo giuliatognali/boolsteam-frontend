@@ -85,7 +85,7 @@ export default {
                 <div>
                   <h6 class="px-3 publisher_date">Numero e Data</h6>
                 </div>
-                
+
               </div>
 
               <!-- container-left-info -->
@@ -128,7 +128,6 @@ export default {
   </div>
 
   <!-- Main-container-background -->
-
 </template>
 
 <style lang="scss" scoped>
@@ -240,5 +239,4 @@ export default {
   text-decoration: none;
   color: #b7de33
 }
-
 </style>
