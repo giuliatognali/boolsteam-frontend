@@ -2,3 +2,10 @@
 @use "./_partial/variables" as *;
 
 @import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+.ms-container{
+max-width: 81.25rem;
+}
+.ms-big-container{
+    max-width: 106.25rem;
+}
