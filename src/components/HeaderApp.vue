@@ -61,7 +61,7 @@ export default {
           </div>
           <!-- /login -->
           <!-- lang select -->
-          <div id="lang">
+          <div id="lang" class="px-2">
             <div class="btn-group">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -88,11 +88,11 @@ export default {
 
 a {
   text-decoration: none;
-  color: #a2a6a9;
+  color: $ms-text;
 }
 
 header {
-  background-color: #171a21;
+  background-color: $ms-dark-primary;
   height: 7.8125rem;
 
   #header-container {
@@ -141,7 +141,7 @@ header {
       }
 
       #download {
-        background-color: #587d13;
+        background-color: $ms-secondary-color;
       }
 
       #login {
