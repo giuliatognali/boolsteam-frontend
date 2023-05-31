@@ -19,6 +19,14 @@ export default {
         .then((response) => {
           this.games = response.data.results.data;
         })
+    },
+    discountGame(index) {
+      const discountGame = this.games[index].price * (1 - this.games[index].discount);
+      return Math.floor(discountGame * 100) / 100;
+    },
+    percentage(index){
+      const percentage = this.games[index].discount * 100 
+      return percentage;
     }
   },
   created() {
@@ -41,11 +49,11 @@ export default {
         <!-- Titolo -->
         <!-- ------------------------------------------------------------------------------------ -->
         <!-- Singola Card -->
-        <div class=" container-fluid d-flex justify-content-center py-1" v-for="game in games">
+        <div class=" container-fluid d-flex justify-content-center py-1" v-for="(game, index) in games">
           <div class="d-flex container_card ">
             <!-- img -->
             <div class="container_img">
-              <img class="" src="https://picsum.photos/420/210" alt="" srcset="">
+              <img class="img_size" :src="game.image" alt="" srcset="">
             </div>
             <!-- img -->
             <!-- Info -->
@@ -56,28 +64,24 @@ export default {
                   <h2 class="px-3 color_title">{{ game.title }}</h2>
                 </div>
                 <div class="d-flex px-3 py-1">
-                  <div>
-                    <h6 class="py-1 px-1 genre">generi</h6>
-                  </div>
-                  <div class="px-2">
-                    <h6 class="py-1 px-1 genre">generi</h6>
+                  <div v-for="genre in game.genres">
+                    <h6 class="py-1 px-1 genre">{{ genre.name }}</h6>
                   </div>
                 </div>
                 <div class="py-1">
-                  <h6 class="px-3 publisher_date">Data e Anno</h6>
+                  <h6 class="px-3 publisher_date">{{ game.release_date }}</h6>
                 </div>
               </div>
               <!-- container-left-info -->
               <!-- container-right-info -->
               <div class="container_info_due d-flex align-items-end py-2">
                 <div class="sale py-1">
-                  <h1>-50%</h1>
+                  <h1>-{{ percentage(index) }}%</h1>
                 </div>
                 <div class="freetoplay py-1 px-2">
-                  <div class="old_price d-flex justify-content-end ">$29.99</div>
-                  <div class="sale_price">$19.99</div>
+                  <div class="old_price d-flex justify-content-end ">{{ game.price }}</div>
+                  <div class="sale_price">{{ discountGame(index) }}</div>
                 </div>
-
               </div>
               <!-- container-right-info -->
             </div>
@@ -126,6 +130,11 @@ export default {
 
 .container_img {
   width: 30%;
+}
+
+.img_size {
+  width: 420px;
+  height: 300px;
 }
 
 .container_info {
