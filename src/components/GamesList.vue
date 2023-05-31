@@ -30,51 +30,32 @@ export default {
 
 <template>
   <!-- Main-container-background -->
-
   <div class="background_color d-flex justify-content-center align-items-center">
-
     <!-- container-cards -->
-
     <div class="d-flex justify-content-center">
-
       <div>
-
         <!-- Titolo -->
-
-        <div class="color_general">
+        <div class="color_general px-2">
           <h1>I GIOCHI</h1>
         </div>
-
         <!-- Titolo -->
-
         <!-- ------------------------------------------------------------------------------------ -->
-
         <!-- Singola Card -->
-
         <div class=" container-fluid d-flex justify-content-center py-1" v-for="game in games">
-
           <div class="d-flex container_card ">
-
             <!-- img -->
-
             <div class="container_img">
               <img class="" src="https://picsum.photos/420/210" alt="" srcset="">
             </div>
-
             <!-- img -->
-
             <!-- Info -->
-
-            <div class="d-flex ">
-
+            <div class="d-flex main_container_info ">
               <!-- container-left-info -->
-
               <div class="container_info">
-
-                <div class="">
+                <div class="py-1">
                   <h2 class="px-3 color_title">{{ game.title }}</h2>
                 </div>
-                <div class="d-flex px-3">
+                <div class="d-flex px-3 py-1">
                   <div>
                     <h6 class="py-1 px-1 genre">generi</h6>
                   </div>
@@ -82,64 +63,46 @@ export default {
                     <h6 class="py-1 px-1 genre">generi</h6>
                   </div>
                 </div>
-                <div>
-                  <h6 class="px-3 publisher_date">Numero e Data</h6>
+                <div class="py-1">
+                  <h6 class="px-3 publisher_date">Data e Anno</h6>
                 </div>
-                
               </div>
-
               <!-- container-left-info -->
-
               <!-- container-right-info -->
-
               <div class="container_info_due d-flex align-items-end py-2">
-
                 <div class="sale py-1">
                   <h1>-50%</h1>
                 </div>
-
                 <div class="freetoplay py-1 px-2">
-                  <div class="old_price">$29.99</div>
+                  <div class="old_price d-flex justify-content-end ">$29.99</div>
                   <div class="sale_price">$19.99</div>
                 </div>
 
               </div>
-
               <!-- container-right-info -->
-
             </div>
-
             <!-- Info -->
-
           </div>
-
         </div>
-
         <!-- Singola Card -->
-
         <!-- ------------------------------------------------------------------------------------ -->
-
       </div>
-
     </div>
-
     <!-- container-cards -->
-
   </div>
-
   <!-- Main-container-background -->
-
 </template>
 
 <style lang="scss" scoped>
 .background_color {
-  background-color: #424b5a;
+  background: rgb(66, 75, 90);
+  background: linear-gradient(90deg, rgba(66, 75, 90, 1) 0%, rgba(66, 75, 90, 1) 20%, rgba(72, 85, 101, 1) 55%, rgba(75, 91, 106, 1) 100%);
   width: 100%;
-  height: 93.75rem;
+  height: 90.625rem;
 }
 
 .container_card {
-  width: 106.25rem;
+  width: 90.625rem;
   max-height: 13.4375rem;
   background-color: #404853;
   border-radius: .3125rem;
@@ -153,20 +116,24 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 4px;
   background-image: linear-gradient(to right, transparent, #353d47);
 }
 
+.main_container_info {
+  width: 70%;
+}
+
 .container_img {
-  width: 26.25rem;
+  width: 30%;
 }
 
 .container_info {
-  width: 68.75rem;
+  width: 80%;
 }
 
 .container_info_due {
-  width: 10.625rem;
+  width: 20%;
 }
 
 .genre {
@@ -220,6 +187,7 @@ export default {
 
 .old_price {
   position: relative;
+  font-size: 14px;
   text-decoration: none;
   color: #56656c;
 }
@@ -228,9 +196,9 @@ export default {
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 80%;
-  height: 1px;
+  left: 25px;
+  width: 70%;
+  height: 2px;
   background: #56656c;
   transform: rotate(-20deg);
 }
@@ -240,5 +208,4 @@ export default {
   text-decoration: none;
   color: #b7de33
 }
-
 </style>
