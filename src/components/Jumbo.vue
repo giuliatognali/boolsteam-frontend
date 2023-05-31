@@ -14,6 +14,7 @@ export default {
 <template>
   <div class="ms-big-container">
     <div class="ms-container">
+      <!-- menu nav -->
       <nav class="d-flex justify-content-between">
         <ul class="list-unstyled m-0 gap-4 d-flex align-items-center">
           <li><a href="#"> Il tuo negozio</a></li>
@@ -23,21 +24,22 @@ export default {
           <li><a href="#"> Notizie</a></li>
           <li><a href="#"> Laboratori</a></li>
         </ul>
+        <!-- /menu nav -->
+        <!-- search bar -->
         <div class="search-bar">
           <label for="search-game" class="d-none">Cerca</label>
           <input type="text" name="searchGame" id="search-game" class="py-1" placeholder="Cerca">
           <button class="submit btn-secondary px-2 py-1"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </nav>
+      <!-- /search bar -->
       <div class="ms-container py-5">
         <h1>
           GIOCHI
         </h1>
         <div class="card-container-jumbo d-flex gap-3">
           <div class="row">
-
             <CardTopMain />
-
             <CardInfoMain />
           </div>
         </div>

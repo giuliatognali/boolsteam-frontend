@@ -5,18 +5,21 @@ export default {
 </script>
 
 <template>
+  <!-- card heighlight -->
   <div class="card-game-main col-4 mt-5">
     <div>
       <img src="https://picsum.photos/id/237/300" alt="">
     </div>
+    <!-- icona stella -->
     <div class="icon">
-      <i class="fa-solid fa-star pt-2" ></i>
-      <h3></h3>
-
+      <i class="fa-solid fa-star pt-2"></i>
     </div>
+    <!-- /icona stella -->
+    <!-- container price -->
     <div class="discount-price">
       PREZZO
     </div>
+    <!-- /container price -->
   </div>
 </template>
 
@@ -30,7 +33,7 @@ export default {
 
 
   div {
-    background-color:hsla(0, 0%, 50%, 0.4);
+    background-color: hsla(0, 0%, 50%, 0.4);
     height: 100%;
     display: flex;
     justify-content: center;
@@ -41,14 +44,16 @@ export default {
       object-fit: cover;
     }
   }
-.discount-price{
-  position: absolute;
+
+  .discount-price {
+    position: absolute;
     height: 40px;
     width: 40px;
     bottom: 0px;
     right: 20px;
 
-}
+  }
+
   .icon {
     background-color: #0d6593;
     position: absolute;
@@ -57,9 +62,9 @@ export default {
     top: 0px;
     right: 10px;
     font-size: 18px;
-    i{
+
+    i {
       display: block;
     }
   }
-}
-</style>
+}</style>
