@@ -57,7 +57,7 @@ export default {
         <div id="login-lang" class="d-flex">
           <!-- login -->
           <div id="login" class="my-1">
-            <a href="#" class="px-3">Accedi</a>
+            <a href="http://127.0.0.1:8000/login" class="px-3">Accedi</a>
           </div>
           <!-- /login -->
           <!-- lang select -->
