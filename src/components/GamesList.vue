@@ -24,8 +24,8 @@ export default {
       const discountGame = this.games[index].price * (1 - this.games[index].discount);
       return Math.floor(discountGame * 100) / 100;
     },
-    percentage(index){
-      const percentage = this.games[index].discount * 100 
+    percentage(index) {
+      const percentage = this.games[index].discount * 100
       return percentage;
     }
   },
@@ -63,24 +63,25 @@ export default {
                 <div class="py-1">
                   <h2 class="px-3 color_title">{{ game.title }}</h2>
                 </div>
-                <div class="d-flex px-3 py-1">
-                  <div v-for="genre in game.genres">
+                <div class="d-flex px-2 py-1">
+                  <div class="px-1" v-for="genre in game.genres">
                     <h6 class="py-1 px-1 genre">{{ genre.name }}</h6>
                   </div>
                 </div>
                 <div class="py-1">
-                  <h6 class="px-3 publisher_date">{{ game.release_date }}</h6>
+                  <h6 class="px-3 publisher_date_hover publisher_date">{{ game.release_date }}</h6>
                 </div>
               </div>
               <!-- container-left-info -->
               <!-- container-right-info -->
               <div class="container_info_due d-flex align-items-end py-2">
-                <div class="sale py-1">
+                <div class="sale py-1" v-if="game.discount != 0">
                   <h1>-{{ percentage(index) }}%</h1>
                 </div>
                 <div class="freetoplay py-1 px-2">
-                  <div class="old_price d-flex justify-content-end ">{{ game.price }}</div>
-                  <div class="sale_price">{{ discountGame(index) }}</div>
+                  <div class="old_price d-flex justify-content-end " v-if="game.price != 0">{{ game.price }}$</div>
+                  <div class="genius d-flex justify-content-center align-items-center" v-else>FREE-TO-PLAY</div>
+                  <div class="sale_price" v-if="game.discount != 0">{{ discountGame(index) }}$</div>
                 </div>
               </div>
               <!-- container-right-info -->
@@ -114,6 +115,16 @@ export default {
   overflow: hidden;
 }
 
+.container_card:hover {
+  transform: scale(1.1);
+  transition: transform 0.7s ease;
+}
+
+.container_card:not(:hover) {
+  transition: transform 0.7s ease;
+  transform: scale(1);
+}
+
 .container_card::after {
   content: "";
   position: absolute;
@@ -143,6 +154,11 @@ export default {
 
 .container_info_due {
   width: 20%;
+}
+
+.publisher_date_hover:hover {
+  color: #3d5f8d;
+  cursor: pointer;
 }
 
 .genre {
@@ -188,6 +204,16 @@ export default {
 
 .color_title {
   color: #bfc3ce;
+}
+
+.genius {
+  background-color: #2c3640;
+  text-align: center;
+  font-size: 24px;
+  height: 2.5rem;
+  border-radius: .125rem;
+  color: #bec6d1;
+  cursor: pointer;
 }
 
 .color_general {
