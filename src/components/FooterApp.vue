@@ -21,11 +21,11 @@ export default {
         </div>
         <!-- /logos -->
         <div class="px-3">
-          <p class="my-0"><small>2023 Valve Corporation Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+          <p class="my-0">2023 Valve Corporation Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
               ut voluptatum eum deleniti voluptate molestias reiciendis nisi ipsa sit corrupti, beatae architecto
-              et.</small></p>
+              et.</p>
           <div class="d-flex">
-            <p><small>IVA inclusa nel prezzo (ove applicabile).</small></p>
+            <p>IVA inclusa nel prezzo (ove applicabile).</p>
             <!-- nav -->
             <nav>
               <ul class="d-flex">
@@ -45,8 +45,8 @@ export default {
       <div id="footer-bottom">
         <!-- nav -->
         <nav class="mt-3">
-          <ul class="d-flex">
-            <li><a href="#" class="px-2 nav-border">Informazioni su valve</a></li>
+          <ul class="d-flex p-0">
+            <li><a href="#" class="ps-3 pe-2 nav-border">Informazioni su valve</a></li>
             <li><a href="#" class="px-2 nav-border">Impieghi</a></li>
             <li><a href="#" class="px-2 nav-border">Steamworks</a></li>
             <li><a href="#" class="px-2 nav-border">Distribuzione su steam</a></li>
@@ -88,7 +88,6 @@ ul {
 a {
   text-decoration: none;
   color: #ced5db;
-  font-size: small;
   font-weight: 600;
 }
 
@@ -101,8 +100,9 @@ nav {
 }
 
 footer {
-  background-color: #171a21;
-  color: #a2a6a9;
+  background-color: $ms-dark-primary;
+  color: $ms-text;
+  font-size: .875rem;
 
   #footer-container {
     margin: auto;
@@ -128,7 +128,6 @@ footer {
       }
     }
   }
-
 
 }
 </style>
