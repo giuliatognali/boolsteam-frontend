@@ -1,14 +1,134 @@
 <script>
-export default{
+export default {
   name: 'FooterApp'
 }
 </script>
 
 <template>
-    <h1>Footer</h1>
+  <!-- footer -->
+  <footer class="p-3">
+    <div id="footer-container" class="ms-big-container">
+      <!-- footer top -->
+      <div id="footer-top" class="pt-2">
+        <!-- logos -->
+        <div id="logos" class="d-flex justify-content-between mb-1">
+          <a href="#" id="logo">
+            <img src="/valve.png" alt="logo">
+          </a>
+          <a href="#" id="logo">
+            <img src="/logo_steam.svg" alt="logo">
+          </a>
+        </div>
+        <!-- /logos -->
+        <div class="px-3">
+          <p class="my-0"><small>2023 Valve Corporation Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+              ut voluptatum eum deleniti voluptate molestias reiciendis nisi ipsa sit corrupti, beatae architecto
+              et.</small></p>
+          <div class="d-flex">
+            <p><small>IVA inclusa nel prezzo (ove applicabile).</small></p>
+            <!-- nav -->
+            <nav>
+              <ul class="d-flex">
+                <li><a href="#" class="px-2 nav-border">Informativa sulla privacy</a></li>
+                <li><a href="#" class="px-2 nav-border">Informazioni legali</a></li>
+                <li><a href="#" class="px-2 nav-border">Contratto di sottoscrizione a Steam</a></li>
+                <li><a href="#" class="px-2 nav-border">Rimborsi</a></li>
+                <li><a href="#" class="px-2">Cookie</a></li>
+              </ul>
+            </nav>
+            <!-- /nav -->
+          </div>
+        </div>
+      </div>
+      <!-- /footer top -->
+      <!-- footer bottom -->
+      <div id="footer-bottom">
+        <!-- nav -->
+        <nav class="mt-3">
+          <ul class="d-flex">
+            <li><a href="#" class="px-2 nav-border">Informazioni su valve</a></li>
+            <li><a href="#" class="px-2 nav-border">Impieghi</a></li>
+            <li><a href="#" class="px-2 nav-border">Steamworks</a></li>
+            <li><a href="#" class="px-2 nav-border">Distribuzione su steam</a></li>
+            <li><a href="#" class="px-2 nav-border">Assistenza</a></li>
+            <li><a href="#" class="px-2 nav-border">Buoni regalo</a></li>
+            <li>
+              <a href="#" class="px-2 nav-border" id="fb-link">
+                <img src="/facebook-logo.png" alt="logo fb">
+                Steam
+              </a>
+            </li>
+            <li>
+              <a href="#" class="px-2" id="tw-link">
+                <img src="/twitter.png" alt="logo fb">
+                @steam
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /nav -->
+      </div>
+      <!-- /footer bottom -->
+    </div>
+  </footer>
+  <!-- /footer -->
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/_partial/_variables' as *;
+
+.nav-border {
+  border-right: 2px solid #35383f;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ced5db;
+  font-size: small;
+  font-weight: 600;
+}
+
+nav {
+  li {
+    a {
+      
+    }
+  }
+}
+
+footer {
+  background-color: #171a21;
+  color: #a2a6a9;
+
+  #footer-container {
+    margin: auto;
+
+    #footer-top {
+      border-top: 2px solid #35383f;
+      border-bottom: 2px solid #35383f;
+
+      #logos {
+        img {
+          width: 8.75rem;
+        }
+      }
+    }
+
+    #footer-bottom {
+      #fb-link,
+      #tw-link {
+        img {
+          width: 1.25rem;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 
 
+}
 </style>
