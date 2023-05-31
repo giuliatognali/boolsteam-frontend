@@ -1,14 +1,23 @@
 <script>
-export default{
-  name: 'Main'
+import Jumbo from './Jumbo.vue';
+import DiscountGames from './DiscountGames.vue';
+import GamesList from './GamesList.vue';
+
+export default {
+  name: 'Main',
+  components: {
+    Jumbo,
+    DiscountGames,
+    GamesList
+  }
+
 }
 </script>
 
 <template>
-    <h1>Main</h1>
+  <Jumbo />
+  <DiscountGames />
+  <GamesList />
 </template>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
