@@ -47,8 +47,9 @@ export default {
   @use '../assets/scss/_partial/_variables' as *;
 
 .card-info{
-  background-color:hsla(0, 0%, 50%, 0.35);
+  background-color:hsla(0, 0%, 5%, 0.35);
   height: 27.5rem;
+  border-radius: 5px;
 
 }
 .tags{
