@@ -27,34 +27,30 @@ export default {
 </script>
 
 <template>
+  <!-- card heighlight -->
   <div v-if="game" class="card-game-main col-4 mt-5">
-    <div class="img">
+    <div class="container_img">
       <img :src="game.image" alt="">
-    </div>
-    <!-- icona stella -->
-    <div class="icon">
-      <div class="border-icon">
-        <i class="fa-solid fa-star pt-2"></i>
+      <!-- icona stella -->
+      <div class="icon">
+        <div class="border-icon">
+          <i class="fa-solid fa-star pt-2"></i>
+        </div>
       </div>
-    </div>
-    <!-- /icona stella -->
-    <!-- container price -->
-    <div class="container_info_due d-flex align-items-end py-2">
-
-      <div class="sale py-1">
-        <h1>-50%</h1>
+      <!-- /icona stella -->
+      <!-- container price -->
+      <div class="container_price d-flex align-items-end py-2">
+        <div class="sale py-1">
+          <h1>-50%</h1>
+        </div>
+        <div class="freetoplay py-1 px-2">
+          <div class="old_price">$29.99</div>
+          <div class="sale_price">$19.99</div>
+        </div>
       </div>
-
-      <div class="freetoplay py-1 px-2">
-        <div class="old_price">$29.99</div>
-        <div class="sale_price">$19.99</div>
-
-      </div>
+      <!-- /container price -->
     </div>
-
-    <!-- /container price -->
   </div>
-
   <!-- card heighlight -->
 </template>
 
@@ -62,22 +58,11 @@ export default {
 @use '../assets/scss/_partial/_variables' as *;
 
 .card-game-main {
-  height: 27.5rem;
-  margin-left: -5px;
-  position: relative;
 
-
-  div {
-    background-color: hsla(0, 0%, 50%, 0.35);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-
-    img {
-      height: 100%;
-      width: 80%;
-      object-fit: cover;
-    }
+  img {
+    height: 450px;
+    width: 21.25rem;
+    object-fit: cover;
   }
 
   .icon {
@@ -86,7 +71,7 @@ export default {
     height: 60px;
     width: 60px;
     top: 0px;
-    right: 12px;
+    right: 80px;
     font-size: 20px;
     padding: 10px 0;
 
@@ -101,8 +86,14 @@ export default {
     }
   }
 
-  .container_info_due {
-    width: 10.625rem;
+  .container_img {
+    position: relative;
+  }
+
+  .container_price {
+    position: absolute;
+    right: 80px;
+    bottom: 0;
   }
 
   .freetoplay {
@@ -146,7 +137,7 @@ export default {
   .old_price::after {
     content: "";
     position: absolute;
-        top: 50%;
+    top: 50%;
     left: 0;
     width: 80%;
     height: 1px;
