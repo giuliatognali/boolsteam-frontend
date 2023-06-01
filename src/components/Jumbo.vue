@@ -54,7 +54,9 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/_partial/_variables' as *;
-
+h1{
+  font-size: 3rem;
+}
 .ms-big-container {
   display: flex;
   margin: 0 auto;
@@ -71,7 +73,6 @@ export default {
     width: 100%;
 
     nav {
-      /*   background-color: hsla(210, 39%, 38%, 0.86); */
       background-color: hsla(223, 45%, 52%, 0.831);
       width: 100%;
       margin-top: 0;

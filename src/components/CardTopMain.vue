@@ -30,11 +30,11 @@ export default {
   <!-- card heighlight -->
   <div v-if="game" class="card-game-main col-4 mt-5">
     <div class="container_img">
-      <img :src="game.image" alt="">
+      <a href="#"><img :src="game.image" alt=""></a>
       <!-- icona stella -->
       <div class="icon">
         <div class="border-icon">
-          <i class="fa-solid fa-star pt-2"></i>
+          <i class="fa-solid fa-star py-2"></i>
         </div>
       </div>
       <!-- /icona stella -->
@@ -58,13 +58,14 @@ export default {
 @use '../assets/scss/_partial/_variables' as *;
 
 .card-game-main {
+  .container_img {
+    img {
+      height: 450px;
+      width: 21.25rem;
+      object-fit: cover;
 
-  img {
-    height: 450px;
-    width: 21.25rem;
-    object-fit: cover;
+    }
   }
-
   .icon {
     background-color: #0d6593;
     position: absolute;
@@ -73,11 +74,12 @@ export default {
     top: 0px;
     right: 80px;
     font-size: 20px;
-    padding: 10px 0;
+    padding: 10px 10px;
 
     .border-icon {
       background-color: white;
       padding: 0 5px;
+      text-align: center;
     }
 
     i {
