@@ -18,6 +18,14 @@ export default {
           this.discounts = response.data.results.data;
           console.log(this.discounts);
         })
+    },
+    discountGame(index) {
+      const discountGame = this.discounts[index].price * (1 - this.discounts[index].discount);
+      return Math.floor(discountGame * 100) / 100;
+    },
+    percentage(index) {
+      const percentage = this.discounts[index].discount * 100
+      return percentage;
     }
   },
   created() {
@@ -30,19 +38,20 @@ export default {
   <div class="ms-container mb-5" v-if="discounts">
     <div class="row">
       <h4 class="mb-4">OFFERTE SPECIALI </h4>
-      <div class="card-game-disc col-4" v-for="discount in discounts">
+      <div class="card-game-disc col-4" v-for="(discount, index) in discounts">
         <div class="img">
           <img :src="discount.image" alt="">
         </div>
 
         <div class="container_price d-flex align-items-end py-2">
-          <div class="sale py-1">
-            <h1>-50%</h1>
-          </div>
-          <div class="freetoplay py-1 px-2">
-            <div class="old_price">$29.99</div>
-            <div class="sale_price">$19.99</div>
-          </div>
+          <div class="sale py-1" v-if="discount.discount != 0">
+                  <h1>-{{ percentage(index) }}%</h1>
+                </div>
+                <div class="freetoplay py-1 px-2">
+                  <div class="old_price d-flex justify-content-end " v-if="discount.price != 0">{{ discount.price }}$</div>
+                  <div class="genius d-flex justify-content-center align-items-center" v-else>FREE-TO-PLAY</div>
+                  <div class="sale_price" v-if="discount.discount != 0">{{ discountGame(index) }}$</div>
+                </div>
         </div>
 
       </div>
@@ -136,5 +145,15 @@ h4 {
   height: 1px;
   background: #56656c;
   transform: rotate(-20deg);
+}
+
+.genius {
+  background-color: #2c3640;
+  text-align: center;
+  font-size: 24px;
+  height: 2.5rem;
+  border-radius: .125rem;
+  color: #bec6d1;
+  cursor: pointer;
 }
 </style>

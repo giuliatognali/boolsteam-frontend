@@ -6,18 +6,26 @@ export default {
     return {
       apiBaseUrl: 'http://127.0.0.1:8000/api',
       apiUrls: {
-        games: '/games/highlight',
+        game: '/games/highlight',
       },
       game: null,
     }
   },
   methods: {
     getGame() {
-      axios.get(this.apiBaseUrl + this.apiUrls.games)
+      axios.get(this.apiBaseUrl + this.apiUrls.game)
         .then((response) => {
           this.game = response.data.results;
 
         })
+    },
+    discountGame() {
+      const discountGame = this.game.price * (1 - this.game.discount);
+      return Math.floor(discountGame * 100) / 100;
+    },
+    percentage() {
+      const percentage = this.game.discount * 100
+      return percentage;
     }
   },
   created() {
@@ -40,12 +48,13 @@ export default {
       <!-- /icona stella -->
       <!-- container price -->
       <div class="container_price d-flex align-items-end py-2">
-        <div class="sale py-1">
-          <h1>-50%</h1>
+        <div class="sale py-1" v-if="game.discount != 0">
+          <h1>-{{percentage()}}%</h1>
         </div>
         <div class="freetoplay py-1 px-2">
-          <div class="old_price">$29.99</div>
-          <div class="sale_price">$19.99</div>
+          <div class="old_price" v-if="game.price != 0">{{ game.price }}$</div>
+          <div class="genius d-flex justify-content-center align-items-center" v-else>FREE-TO-PLAY</div>
+          <div class="sale_price" v-if="game.discount != 0">{{ discountGame() }}$</div>
         </div>
       </div>
       <!-- /container price -->
@@ -59,6 +68,16 @@ export default {
 
 .card-game-main {
   .container_img {
+    :hover {
+      transform: scale(1.05);
+      transition: transform 0.7s ease;
+    }
+
+    :not(:hover) {
+      transition: transform 0.7s ease;
+      transform: scale(1);
+    }
+
     img {
       height: 450px;
       width: 21.25rem;
@@ -66,6 +85,7 @@ export default {
 
     }
   }
+
   .icon {
     background-color: #0d6593;
     position: absolute;
@@ -146,5 +166,13 @@ export default {
     background: #56656c;
     transform: rotate(-20deg);
   }
+  .genius {
+  background-color: #2c3640;
+  text-align: center;
+  font-size: 24px;
+  height: 2.5rem;
+  border-radius: .125rem;
+  color: #bec6d1;
+  cursor: pointer;
 }
-</style>
+}</style>
